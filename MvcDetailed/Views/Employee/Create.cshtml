@@ -1,0 +1,47 @@
+﻿@model MvcDetailed.Models.Employee
+
+@{
+    ViewBag.Title = "Create";
+}
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<h2>Insert</h2>
+
+@using (Html.BeginForm("create", "Employee", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Name)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Name)
+                @Html.ValidationMessageFor(m=>m.Name)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Email)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Email)
+                @Html.ValidationMessageFor(m => m.Email)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Phoneno)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Phoneno)
+                @Html.ValidationMessageFor(m => m.Phoneno)
+            </td>
+        </tr>
+
+
+    </table>
+
+    <input type="submit" name="submit" />
+}
